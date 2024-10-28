@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocapp</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Vocapp</h1>
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}"><i class="bx bx-home"></i></a>
+        <a href="{{ url_for('exercises') }}"><i class="bx bx-book"></i></a>
+        <a href="{{ url_for('flashcards') }}"><i class="bx bx-chart"></i></a>
+        <a href="{{ url_for('timer') }}"><i class="bx bx-stopwatch"></i></a>
+        <a href="{{ url_for('settings') }}"><i class="bx bx-cog"></i></a>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <section id="flashcards">
+        <h2>Progress</h2>
+        <div id="statistics">
+          <p id="time-spent">Time spent today: 0 minutes</p>
+          <p id="days-count">Days tracked: 0</p>
+          <p id="weeks-count">Weeks tracked: 0</p>
+        </div>
+      </section>
+
+      <section id="badge">
+        <h2>Badge</h2>
+        <div class="badgecontainer">
+          <div class="badge">
+            <i class="bx bx-run icon"></i>
+            <!-- Holz -->
+            <span>30 Minuten</span>
+          </div>
+          <div class="badge">
+            <i class="bx bx-shield icon"></i>
+            <!-- Kupfer -->
+            <span>24 Stunden</span>
+          </div>
+          <div class="badge">
+            <i class="bx bx-ghost icon"></i>
+            <!-- Eisen -->
+            <span>1 Woche</span>
+          </div>
+          <div class="badge">
+            <i class="bx bx-star icon"></i>
+            <!-- Gold -->
+            <span>1 Monat</span>
+          </div>
+          <div class="badge">
+            <i class="bx bxl-sketch icon"></i>
+            <!-- Platin -->
+            <span>1 Jahr</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocabulary App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Vocapp</h1>
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}"><i class="bx bx-home"></i></a>
+        <a href="{{ url_for('exercises') }}"><i class="bx bx-book"></i></a>
+        <a href="{{ url_for('flashcards') }}"><i class="bx bx-chart"></i></a>
+        <a href="{{ url_for('timer') }}"><i class="bx bx-stopwatch"></i></a>
+        <a href="{{ url_for('settings') }}"><i class="bx bx-cog"></i></a>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <section id="home">
+        <h2>Welcome!</h2>
+        <p>
+          Start your language journey with the Vocabulary App. Practice with
+          exercises and track your learning progress.
+        </p>
+      </section>
+
+      <section id="exercises">
+        <h2><i class="bx bx-book"></i> Write</h2>
+        <p>Write a flashcard to get started.</p>
+        <button class="start-button">
+          <a href="{{ url_for('flashcards') }}">View Exercises</a>
+        </button>
+      </section>
+
+      <section id="progress">
+        <h2><i class="bx bx-chart"></i> Progress</h2>
+        <p>Track your learning progress and set goals for your vocabulary.</p>
+        <button class="progress-button">
+          <a href="{{ url_for('flashcards') }}">Show</a>
+        </button>
+      </section>
+
+      <section id="timer">
+        <h2><i class="bx bx-stopwatch"></i> Stopwatch</h2>
+        <p>Track the time you learn with a timer.</p>
+        <button style="text-decoration: none" class="settings-button">
+          <a href="{{ url_for('timer') }}">Set a timer</a>
+        </button>
+      </section>
+
+      <section id="settings">
+        <h2><i class="bx bx-cog"></i> Settings</h2>
+        <p>
+          Adjust the app settings to get the most out of your learning
+          experience.
+        </p>
+        <button style="text-decoration: none" class="settings-button">
+          <a href="{{ url_for('settings') }}">Edit Settings</a>
+        </button>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

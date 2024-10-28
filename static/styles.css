@@ -1,0 +1,284 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #eaeaea; /* Light gray background, like note paper */
+  margin: 0;
+  padding: 0;
+}
+
+.app-header {
+  background: #fff3cd; /* Light cream background */
+  color: #856404; /* Dark brown text color */
+  padding: 10px 0; /* Padding for header */
+  text-align: center;
+  position: sticky; /* Header stays visible at the top */
+  top: 0; /* Always at the top */
+  z-index: 1000; /* Above other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  transition: height 0.3s ease; /* Smooth height transition */
+}
+
+#tagline {
+  transition: opacity 0.3s ease; /* Fade out transition */
+}
+
+.app-main {
+  padding: 20px; /* Padding for main content */
+}
+
+.app-main section {
+  background: #fff; /* White background for content */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 20px; /* Space between sections */
+  padding: 15px; /* Padding for content */
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+button {
+  background-color: #c9ad7a; /* Light wood tone */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  padding: 10px 15px; /* Padding for buttons */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Hand pointer on hover */
+  font-size: 16px; /* Font size for buttons */
+  width: 100%; /* Button takes full width */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  box-sizing: border-box; /* Include padding and border in width/height */
+  text-decoration: none;
+}
+
+/* Link style within button - no underline, white color */
+button a {
+  color: white; /* Ensure link text color is white */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Make entire button clickable */
+  width: 100%; /* Full width link within button */
+  height: 100%; /* Full height link within button */
+  box-sizing: border-box;
+}
+
+/* Remove outline and maintain color on focus */
+button:focus {
+  outline: none; /* Remove focus outline */
+  background-color: #c9ad7a; /* Original background color */
+  color: white;
+}
+
+/* Active state styling */
+button:active {
+  background-color: #a68c60; /* Darker shade on click */
+  color: white;
+}
+
+/* Disabled button styling */
+button:disabled {
+  background-color: #e0e0e0; /* Light gray for disabled */
+  color: #b0b0b0; /* Gray text for disabled */
+  cursor: not-allowed;
+}
+
+/* Ensure links inside buttons have no style change on hover or focus */
+button a:hover,
+button a:focus,
+button a:active {
+  text-decoration: none; /* Prevent underline */
+  color: white; /* Maintain white color */
+}
+
+/* Optional: Remove decoration on ::after for consistency */
+button::after {
+  text-decoration: none;
+  color: white;
+}
+
+/* Navbar Container */
+.navbar {
+  background-color: #f5f5dc; /* Beige Hintergrundfarbe, wie Notizpapier */
+  color: #333; /* Dunkelgraue Schriftfarbe für gute Lesbarkeit */
+  padding: 10px 20px; /* Innenabstand für die Navbar */
+  display: flex; /* Flexbox für die Anordnung */
+  justify-content: space-between; /* Platz zwischen den Elementen */
+  align-items: center; /* Vertikale Ausrichtung */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Schatten für Tiefe */
+  border-radius: 8px; /* Abgerundete Ecken */
+  margin: 10px; /* Außenabstand für die Navbar */
+}
+
+/* Links in der Navbar */
+.navbar a {
+  text-decoration: none; /* Keine Unterstreichung für Links */
+  color: #856404; /* Dunkelbraune Schriftfarbe */
+  margin: 0 15px; /* Abstand zwischen den Links */
+  font-weight: bold; /* Fettdruck für Links */
+  transition: color 0.3s ease; /* Übergangseffekt für Hover */
+}
+
+/* Hover-Effekt für Links */
+.navbar a:hover {
+  color: #b58900; /* Helle goldene Farbe beim Hover */
+}
+
+/* Aktiver Link */
+.navbar .active {
+  border-bottom: 2px solid #b58900; /* Unterstrich für den aktiven Link */
+}
+
+.flashcard {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px 0;
+  transition: transform 0.3s ease;
+}
+
+.flashcard h4 {
+  margin: 0;
+}
+
+.flashcard .card-content {
+  margin-bottom: 10px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+#card-list {
+  margin-top: 20px; /* Space between inputs and card list */
+}
+
+.animate {
+  transform: scale(1.05);
+}
+
+.language-item {
+  display: flex; /* Flexbox für horizontale Ausrichtung */
+  align-items: center; /* Vertikale Zentrierung */
+}
+
+.language-button {
+  border: none; /* Keine Rahmen */
+  color: white; /* Textfarbe */
+  padding: 10px 20px; /* Innenabstand */
+  text-align: center; /* Text zentrieren */
+  text-decoration: none; /* Unterstreichung entfernen */
+  display: inline-block; /* Block-Element für Layout */
+  font-size: 16px; /* Schriftgröße */
+  margin-right: 5px; /* Abstand nach rechts */
+  cursor: pointer; /* Zeiger anzeigen, wenn über den Button gefahren wird */
+  border-radius: 5px; /* Abgerundete Ecken */
+  margin-top: 2vh;
+}
+#language {
+  font-size: 16px; /* Verhindert automatisches Heranzoomen auf Mobilgeräten */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.delete-button {
+  background-color: rgb(148, 10, 10); /* Transparente Hintergrundfarbe */
+  border: none; /* Keine Rahmen */
+  color: white;
+  cursor: pointer; /* Zeiger anzeigen, wenn über den Button gefahren wird */
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+#canvas-container {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 5px;
+  width: 100vw; /* Volle Breite der Viewport-Breite */
+  box-sizing: border-box; /* Bezieht die Border- und Padding-Werte in die Breite ein */
+  max-width: 100%; /* Begrenzung auf maximale Breite von 100% */
+  overflow-x: hidden; /* Verhindert horizontalen Scroll */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Badge-Zeitleiste */
+.badgecontainer {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.badgecontainer::-webkit-scrollbar {
+  display: none; /* Webkit */
+}
+
+.badge {
+  flex: none;
+  text-align: center;
+  margin: 0 10px;
+  min-width: 80px;
+  position: relative;
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 20px);
+  height: 2px;
+  background-color: #d3d3d3;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.icon {
+  font-size: 24px;
+  color: blue;
+}
+
+.badge span {
+  display: block;
+  font-size: 0.9em;
+  color: #333;
+  margin-top: 6px;
+}
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: row; /* Stack navbar links vertically */
+    align-items: stretch; /* Stretch links to full width */
+  }
+
+  .navbar a {
+    margin: 5px 0; /* Vertical spacing for links */
+    width: 100%; /* Links take full width */
+    text-align: center; /* Center text in links */
+  }
+
+  button {
+    font-size: 14px; /* Smaller button font size on mobile */
+  }
+
+  .app-main {
+    padding: 10px; /* Less padding on mobile */
+  }
+
+  .app-main section {
+    padding: 10px; /* Less padding in sections on mobile */
+  }
+
+  .flashcard {
+    padding: 12px; /* Less padding for flashcards on mobile */
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocapp</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Vocapp</h1>
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}"><i class="bx bx-home"></i></a>
+        <a href="{{ url_for('exercises') }}"><i class="bx bx-book"></i></a>
+        <a href="{{ url_for('flashcards') }}"><i class="bx bx-chart"></i></a>
+        <a href="{{ url_for('timer') }}"><i class="bx bx-stopwatch"></i></a>
+        <a href="{{ url_for('settings') }}"><i class="bx bx-cog"></i></a>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <section id="stopwatch">
+        <h2>Stoppuhr</h2>
+        <div class="timer">
+          <span id="display">00:00</span>
+        </div>
+        <div class="controls">
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn">Pause</button>
+          <button id="resetBtn">Zurücksetzen</button>
+          <button id="lapBtn">Runde</button>
+        </div>
+        <div class="lap-list" id="lapList">
+          <h3>Runden</h3>
+          <ul></ul>
+        </div>
+        <div class="time-selection">
+          <label for="timeSelect">Wähle Zeit:</label>
+          <select id="timeSelect">
+            <option value="30">30 Sekunden</option>
+            <option value="60">1 Minute</option>
+            <option value="120">2 Minuten</option>
+            <option value="300">5 Minuten</option>
+            <option value="600">10 Minuten</option>
+            <option value="1200">20 Minuten</option>
+          </select>
+          <button id="setTimer">Setze Timer</button>
+        </div>
+      </section>
+    </main>
+
+    <style>
+      /* Stil für die Stoppuhr */
+      #stopwatch {
+        text-align: center;
+      }
+
+      .timer {
+        font-size: 2em;
+        margin: 20px 0;
+        animation: fadeIn 1s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .controls button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+      }
+
+      .lap-list {
+        margin-top: 20px;
+      }
+
+      .time-selection {
+        margin-top: 20px;
+      }
+    </style>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

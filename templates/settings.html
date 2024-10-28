@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocapp</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Vocapp</h1>
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}"><i class="bx bx-home"></i></a>
+        <a href="{{ url_for('exercises') }}"><i class="bx bx-book"></i></a>
+        <a href="{{ url_for('flashcards') }}"><i class="bx bx-chart"></i></a>
+        <a href="{{ url_for('timer') }}"><i class="bx bx-stopwatch"></i></a>
+        <a href="{{ url_for('settings') }}"><i class="bx bx-cog"></i></a>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <section id="settings">
+        <h2>Settings</h2>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

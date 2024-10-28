@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocapp</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Vocapp</h1>
+      <nav class="navbar">
+        <a href="{{ url_for('home') }}"><i class="bx bx-home"></i></a>
+        <a href="{{ url_for('exercises') }}"><i class="bx bx-book"></i></a>
+        <a href="{{ url_for('flashcards') }}"><i class="bx bx-chart"></i></a>
+        <a href="{{ url_for('timer') }}"><i class="bx bx-stopwatch"></i></a>
+        <a href="{{ url_for('settings') }}"><i class="bx bx-cog"></i></a>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <section id="flashcards">
+        <h2>Create Flashcards</h2>
+
+        <input
+          type="text"
+          id="language"
+          placeholder="Language (e.g., German, English).."
+        />
+        <div style="margin-bottom: 2vh"></div>
+
+        <button id="add-language-button">Add Language</button>
+        <div style="margin-bottom: 2vh"></div>
+
+        <h3>Languages</h3>
+        <div style="margin-bottom: -2vh"></div>
+        <div id="category-list">
+          <div class="language-item">
+            <button id="english-button" class="language-button">
+              Demo (delete) ➔
+            </button>
+            <button id="delete-language-button" class="delete-button">
+              <i class="bx bx-trash"></i>
+              <!-- Mülltonne-Icon -->
+            </button>
+          </div>
+        </div>
+
+        <!-- Display categories here -->
+
+        <div id="card-list"></div>
+        <!-- Display flashcards here -->
+      </section>
+
+      <div id="canvas-container" class="hidden">
+        <canvas
+          id="myCanvas"
+          width="400"
+          height="200"
+          style="border: 1px solid #000000"
+        >
+          Your browser does not support the HTML canvas element.
+        </canvas>
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
