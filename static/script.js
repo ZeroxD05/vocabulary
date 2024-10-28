@@ -213,3 +213,53 @@ document
       canvasContainer.classList.add("hidden"); // Verbirgt den Canvas-Bereich
     }
   });
+let timer;
+let seconds = 0;
+let isRunning = false;
+
+const display = document.getElementById("display");
+const startBtn = document.getElementById("startBtn");
+const pauseBtn = document.getElementById("pauseBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+function updateDisplay() {
+  const minutes = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  display.textContent = `${String(minutes).padStart(2, "0")}:${String(
+    secs
+  ).padStart(2, "0")}`;
+}
+
+startBtn.addEventListener("click", () => {
+  if (!isRunning) {
+    isRunning = true;
+    startBtn.disabled = true;
+    pauseBtn.disabled = false;
+    resetBtn.disabled = false;
+
+    timer = setInterval(() => {
+      seconds++;
+      updateDisplay();
+    }, 1000);
+  }
+});
+
+pauseBtn.addEventListener("click", () => {
+  if (isRunning) {
+    isRunning = false;
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
+
+    clearInterval(timer);
+  }
+});
+
+resetBtn.addEventListener("click", () => {
+  isRunning = false;
+  clearInterval(timer);
+  seconds = 0;
+  updateDisplay();
+  startBtn.disabled = false;
+  pauseBtn.disabled = true;
+  resetBtn.disabled = true;
+});

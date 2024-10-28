@@ -26,36 +26,22 @@
     </header>
 
     <main class="app-main">
-      <section id="stopwatch">
+      <section>
         <h2>Stoppuhr</h2>
         <div class="timer">
           <span id="display">00:00</span>
         </div>
         <div class="controls">
-          <button id="startBtn">Start</button>
-          <button id="pauseBtn">Pause</button>
-          <button id="resetBtn">Zurücksetzen</button>
-          <button id="lapBtn">Runde</button>
-        </div>
-        <div class="lap-list" id="lapList">
-          <h3>Runden</h3>
-          <ul></ul>
-        </div>
-        <div class="time-selection">
-          <label for="timeSelect">Wähle Zeit:</label>
-          <select id="timeSelect">
-            <option value="30">30 Sekunden</option>
-            <option value="60">1 Minute</option>
-            <option value="120">2 Minuten</option>
-            <option value="300">5 Minuten</option>
-            <option value="600">10 Minuten</option>
-            <option value="1200">20 Minuten</option>
-          </select>
-          <button id="setTimer">Setze Timer</button>
+          <button id="startBtn"><i class="bx bx-play"></i> Start</button>
+          <button id="pauseBtn" disabled>
+            <i class="bx bx-pause"></i> Pause
+          </button>
+          <button id="resetBtn" disabled>
+            <i class="bx bx-reset"></i> Reset
+          </button>
         </div>
       </section>
     </main>
-
     <style>
       /* Stil für die Stoppuhr */
       #stopwatch {
@@ -77,11 +63,15 @@
         }
       }
 
-      .controls button {
+      .controls {
         margin: 5px;
-        padding: 10px 20px;
+        padding: 5px;
+        gap: 2vw;
         font-size: 1em;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
       }
 
       .lap-list {
@@ -92,7 +82,6 @@
         margin-top: 20px;
       }
     </style>
-
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
